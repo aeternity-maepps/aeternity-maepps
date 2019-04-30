@@ -1,0 +1,1251 @@
+{
+	"info": {
+		"name": "Aevent API",
+		"_postman_id": "ENTER YOUR API POSTMAN TOKEN HERE",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "aevent tests",
+			"description": "",
+			"item": [
+				{
+					"name": "get aevents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aevents",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aevents"
+							]
+						},
+						"description": "gets aevents, supports field query by parameter"
+					},
+					"response": []
+				},
+				{
+					"name": "get all aevents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aevents?",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aevents"
+							],
+							"query": [
+								{
+									"key": "world",
+									"value": "Berlin",
+									"equals": true
+								}
+							]
+						},
+						"description": "gets aevents from around the world"
+					},
+					"response": []
+				},
+				{
+					"name": "get aevents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aevents?city=berlin&fields=name,address,website",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aevents"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Berlin",
+									"equals": true
+								},
+								{
+									"key": "fields",
+									"value": "name,address,website",
+									"equals": true
+								}
+							]
+						},
+						"description": "gets aevents in Berlin"
+					},
+					"response": []
+				},
+				{
+					"name": "aembassadors by aevent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aevents/57/aembassadors",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aevents",
+								"57",
+								"aembassadors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get specific aevents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:5000/aevents/57",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"aevents",
+								"57"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test invalid resource error",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:5000/aevents/999",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"aevents",
+								"999"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "nested aembassador by aevent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aevent/57/aembassadors",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aevent",
+								"57",
+								"aembassador"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get aembassador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user2_secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador"
+							]
+						},
+						"description": "get aembassador"
+					},
+					"response": []
+				},
+				{
+					"name": "get aembassador photo info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user2_secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/1/photos",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"1",
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get nested aembassador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/1",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "photos by aembassador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/1/photos",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"1",
+								"photos"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get aembassador photos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/photos",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"photos"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "nested aembassador photo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/photos/1",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"photos",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "aembassador categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/categories",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"categories"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "nested aembassador category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/categories/3",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"categories",
+								"3"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "styles by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/categories/3/styles",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"categories",
+								"3",
+								"styles"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "aembassador styles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/styles",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"styles"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "nested aembassador style",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/styles/1",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"styles",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "query aevent as geojson",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aevent?f=geojson",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aevent"
+							],
+							"query": [
+								{
+									"key": "f",
+									"value": "geojson",
+									"equals": true
+								}
+							]
+						},
+						"description": "gets aevent in geojson format"
+					},
+					"response": []
+				},
+				{
+					"name": "download aembassador photo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/photos/1/download",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"photos",
+								"1",
+								"download"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "security tests",
+			"description": "",
+			"item": [
+				{
+					"name": "get users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "login test user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38b01c7e-a202-4fdb-9da3-dc338801deb9",
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable('auth', jsonData.token);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "test_user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user123",
+									"type": "text"
+								},
+								{
+									"key": "remember",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/login",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Jane Doe",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test_user2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{email}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/create",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activate user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/2/activate",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								"2",
+								"activate"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "welcome auth test",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/welcome",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								"welcome"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "data",
+			"description": "Operations for working with data, these all require the user to be logged in",
+			"item": [
+				{
+					"name": "export data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "f",
+									"value": "csv",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "f",
+									"value": "shapefile",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/data/aevent/export",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"data",
+								"aevent",
+								"export"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "export data as shapefile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "f",
+									"value": "csv",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "f",
+									"value": "shapefile",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/data/aevent/export",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"data",
+								"aevent",
+								"export"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "edits",
+			"description": "tests for editing in aevents_api",
+			"item": [
+				{
+					"name": "create aevents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "66fd369f-21d8-4737-957c-a0b24fb2059a",
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable('new_aevents_id', jsonData.id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test aevents",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "comments",
+									"value": "this is a test edit",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "y",
+									"value": "46.7867",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "x",
+									"value": "-92.1005",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/data/aevent/create",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"data",
+								"aevent",
+								"create"
+							]
+						},
+						"description": "creates a new aevents.  Add the following test:\n\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable('new_aevents_id', jsonData.id);"
+					},
+					"response": []
+				},
+				{
+					"name": "add aembassador to aevents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "47095f03-4cac-421a-b5a9-62f4511259ec",
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable('new_aembassador_id', jsonData.id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pacific Phantom",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is a test aembassador",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "aevents_id",
+									"value": "{{new_aevents_id}}",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/data/aembassador/create",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"data",
+								"aembassador",
+								"create"
+							]
+						},
+						"description": "creates a new aembassador for aevents.  Add the following test:\n\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable('new_aembassador_id', jsonData.id);"
+					},
+					"response": []
+				},
+				{
+					"name": "check aevents updates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aevent/{{new_aevents_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aevent",
+								"{{new_aevents_id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update aevents",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "city",
+									"value": "Duluth",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "comments",
+									"value": "I have overriden the comment",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/data/aevent/{{new_aevents_id}}/update",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"data",
+								"aevent",
+								"{{new_aevents_id}}",
+								"update"
+							]
+						},
+						"description": "tests a aevents update"
+					},
+					"response": []
+				},
+				{
+					"name": "fetch aembassador for new aevents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aevent/{{new_aevents_id}}/aembassador",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aevent",
+								"{{new_aevents_id}}",
+								"aembassador"
+							]
+						},
+						"description": "checks for aembassador for our new aevents"
+					},
+					"response": []
+				},
+				{
+					"name": "add aembassador photo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4ada451-7305-4151-aa92-72da40715f57",
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable('new_aembassador_photo_id', jsonData.id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo_name",
+									"value": "pacific_phantom.png",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"description": "",
+									"type": "file",
+									"src": "pacific_phantom.png"
+								},
+								{
+									"key": "aembassador_id",
+									"value": "{{new_aembassador_id}}",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/data/aembassador_photos/create",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"data",
+								"aembassador_photos",
+								"create"
+							]
+						},
+						"description": "creates a new aembassador for aevents.  Add the following test:\n\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable('new_aembassador_photo_id', jsonData.id);"
+					},
+					"response": []
+				},
+				{
+					"name": "new aembassador photo infos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/{{new_aembassador_id}}/photos",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"{{new_aembassador_id}}",
+								"photos"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "new aembassador photo download",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/photos/{{new_aembassador_photo_id}}/download",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"photos",
+								"{{new_aembassador_photo_id}}",
+								"download"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete new aevents",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/data/aevent/{{new_aevents_id}}/delete",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"data",
+								"aevent",
+								"{{new_aevents_id}}",
+								"delete"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "check aembassador after deleting aevents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/{{new_aembassador_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"{{new_aembassador_id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete new aembassador",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/data/aembassador/{{new_aembassador_id}}/delete",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"data",
+								"aembassador",
+								"{{new_aembassador_id}}",
+								"delete"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "check photo infos after deleting new aembassador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/aembassador/photos/{{new_aembassador_photo_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"aembassador",
+								"photos",
+								"{{new_aembassador_photo_id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "endpoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{host}}:{{port}}/endpoints",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"endpoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "body_param",
+							"value": "bar",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}/test?query_param=foo",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"test"
+					],
+					"query": [
+						{
+							"key": "query_param",
+							"value": "foo",
+							"equals": true
+						}
+					]
+				},
+				"description": "test collect args function to return input arguments"
+			},
+			"response": []
+		}
+	]
+}
